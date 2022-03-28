@@ -2,16 +2,19 @@
 
 import string
 import random
+try:
+        pass_len = int(input('Your password length preference? '))
 
-pass_len = int(input('How many characters in your password? '))
+        new_password = pass_len
 
-new_password = pass_len
-
-all_chars = string.ascii_letters + string.digits + string.punctuation
-password = ''
-for char in range(size):
-        rand_char = random.choice(all_chars)
-        password = password + rand_char
+        all_chars = string.ascii_letters + string.digits + string.punctuation
+        password = ''
+        for char in range(pass_len):
+                rand_char = random.choice(all_chars)
+                password = password + rand_char
+        print('Password generated is: ', password)              
+except ValueError:
+        print("Invalid character entered, Try Again")
         
-print('Your new password is: ', password)
+        
 
